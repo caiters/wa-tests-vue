@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <title>Web Advanced tests Vue.js</title>
+</head>
+<body>
+
+  <div id="main">
+    <nav v-bind:class="active" v-on:click.prevent>
+      <ul>
+        <li><a href="#" v-on:click="makeActive('home')">Home</a></li>
+        <li><a href="#" v-on:click="makeActive('projects')">Projects</a></li>
+        <li><a href="#" v-on:click="makeActive('services')">Services</a></li>
+        <li><a href="#" v-on:click="makeActive('contact')">Contact</a></li>
+      </ul>
+    </nav>
+
+    <p>You chose {{active}}</p>
+  </div>
+
+  <div id="hello">
+    <label for="game">{{name}}, create a list of Blizzard games.</label>
+    <div>
+      <input type="text" name="game" id="game" v-model="game" />
+      <button type="button" v-on:click="addGame(game)">Add Game</button>
+    </div>
+
+    <ul>
+      <li v-for="item in list">
+        {{item}}
+      </li>
+    </ul>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.5/vue.min.js"></script>
+  <script src="vue-demo.js"></script>
+</body>
+</html>
